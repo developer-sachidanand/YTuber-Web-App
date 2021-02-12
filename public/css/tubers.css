@@ -1,0 +1,15 @@
+.jumbotron{
+    background-image: url("../compressed-images/c1.jpg");
+    background-position: center;background-size: cover;
+    background-repeat: no-repeat;
+    height: 25vw;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+ }
+ 
+ .row > div[class*='col-'] {
+   display: flex;
+ }

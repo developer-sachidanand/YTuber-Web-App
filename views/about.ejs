@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/about.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-4 text-light text-center">More than just a Website</h1>
+          <!-- <p class="text-light mb-2">YTubers is created on purpose to make brands and different advertisement
+              agency to collab with youtubers with their choice.
+          </p> -->
+          <div>
+              <ul class="d-flex flex-row justify-content-center">
+                <li class="text-light mr-4">Build Your Brand</li>
+                <li class="text-light mr-4">Get Your Business</li>
+                <li class="text-light mr-4">Manage Clients</li>
+                <li class="text-light mr-4">Do it Yourself</li>
+              </ul>
+          </div>
+          <p class="text-center"><a class="btn btn-primary btn-lg" href="/" role="button">GET STARTED &raquo;</a></p>
+        </div>
+      </div>
+
+      <div class="container">
+          <div class="row">
+              <div class="col-md-8">
+                  <h2 class="p-3 text-success msg"></h2>
+                  <h2>Get In touch</h2>
+                  <p>Please fill out the quick form and we will be in touch with lightenig speed</p>
+                  <form action="/api/about" method="POST" autocomplete="off">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Enter Email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Enter Subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" id="" cols="30" rows="10" class="form-control" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success btn-lg send">SUBMIT</button>
+                        <a href="/" class="btn btn-secondary btn-lg">Go to Home</a>
+                    </div>
+                  </form>
+                  
+              </div>
+              <div class="col-md-4">
+                  <h2>Connect with us</h2>
+                  <p>For Support or any questions
+                      <br>
+                      Email us at <span class="text-success">sachin.developer@gmail.com</span>
+                  </p>
+                  
+                  <div>
+                      <h2>YTubers India</h2>
+                      <p>B-222,First Floor
+                          <br>
+                        Okhala Industries Area,Phase 1
+                        <br>
+                        New Delhi IN-110020
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <script>
+          let msgId = document.querySelector('.send');
+          let msg = document.querySelector('.msg');
+          msgId.addEventListener('click',()=>{
+            // msg.innerHTML = "Thanks for Contacting. We will contact you back soon";
+            window.alert('Thanks for contacting us.We will reach back to you soon')
+          })
+      </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body class="bg-dark">
+    <section class="container mt-5">
+        <h1 class="large text-light">
+          Add An Experience
+        </h1>
+        <p class="lead text-light">
+          <i class="fas fa-code-branch"></i> Add any developer/programming
+          positions that you have had in the past
+        </p>
+        <small class="text-warning">* = required field</small>
+        <form class="form">
+          <div class="form-group mb-5">
+            <input type="text" class="form-control" placeholder="* Job Title" name="title" required />
+          </div>
+          <div class="form-group mb-5">
+            <input type="text"  class="form-control"placeholder="* Company" name="company" required />
+          </div>
+          <div class="form-group">
+            <input type="text"  class="form-control"placeholder="Location" name="location" />
+          </div>
+          <div class="form-group">
+            <h4 class="text-light">From Date</h4>
+            <input type="date" class="form-control" name="from" />
+          </div>
+          <div class="form-group">
+            <h4 class="text-light">To Date</h4>
+            <input type="date"  class="form-control"name="to" />
+          </div>
+          <div class="form-group">
+            <p class="text-light"><input type="checkbox" name="current" value="" /> Current Job</p>
+          </div>
+          <div class="form-group">
+            <textarea
+              name="description"
+              cols="30"
+              rows="5"
+              placeholder="Job Description" class="form-control"
+            ></textarea>
+          </div>
+          <input type="submit" class="btn btn-primary my-1" />
+          <a class="btn btn-warning my-1" href="/api/user/profile">Go Back</a>
+        </form>
+      </section>
+</body>
+</html>
