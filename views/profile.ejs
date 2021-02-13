@@ -40,22 +40,10 @@
           </thead>
           <tbody>
             <tr>
-              <td>Microsoft</td>
-              <td class="hide-sm">Senior Developer</td>
+              <td><%= Exp.company %></td>
+              <td class="hide-sm"><%= Exp.title %></td>
               <td class="hide-sm">
-                Oct 2011 - Current
-              </td>
-              <td>
-                <button class="btn btn-danger">
-                  Delete
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>Sun Microsystems</td>
-              <td class="hide-sm">Senior Developer</td>
-              <td class="hide-sm">
-                Oct 2004 - Nov 2010
+                <%= Exp.from %> to <%= Exp.to %>
               </td>
               <td>
                 <button class="btn btn-danger">
@@ -80,10 +68,10 @@
           </thead>
           <tbody>
             <tr>
-              <td>University of Washington</td>
-              <td class="hide-sm">Masters</td>
+              <td><%= Edu.school %></td>
+              <td class="hide-sm"><%= Edu.degree %></td>
               <td class="hide-sm">
-                Sep 1993 - June 1999
+                <%= Edu.from %> to <%= Edu.to %>
               </td>
               <td>
                 <button class="btn btn-danger">
