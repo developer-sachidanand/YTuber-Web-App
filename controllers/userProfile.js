@@ -51,8 +51,15 @@ exports.addExperience = (req,res) =>{
     })
 }
 
-exports.deleteExperience =(req,res) =>{
-
+exports.deleteExperience = async (req,res) =>{
+    try {
+        const id = req.params.id;
+        const Experience = await AddExperience.deleteOne({_id:id});
+        if(!Experience) return res.status(404).send('Customer with the given id not found');
+        res.redirect('/api/user/profile');        
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
 }
 
 
@@ -71,15 +78,44 @@ exports.addEducation = (req,res) =>{
     })
 }
 
-exports.deleteEducation =(req,res) =>{
-    
+exports.deleteEducation = async(req,res) =>{
+    try {
+        const id = req.params.id;
+        const Education = await AddEducation.deleteOne({_id:id});
+        if(!Education) return res.status(404).send('Customer with the given id not found');
+        res.redirect('/api/user/profile');        
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+}
+exports.getdeleteEducation = async (req,res,next) =>{
+    try {
+        const id = req.params.id;
+        const Education = await AddEducation.findById(id).exec();
+        res.render('deleteEducation', {
+            Edu: Education
+        });
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+}
+exports.deleteExperienceView = async (req,res,next) =>{
+    try {
+        const id = req.params.id;
+        const Experience = await AddExperience.findById(id).exec();
+        res.render('deleteExp', {
+            Exp: Experience
+        });
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
 }
 
 
 // get user education detail
 
 exports.getUserEducation = (req,res,next) =>{
-    AddEducation.findOne({user:req.user._id},(err,edu)=>{
+    AddEducation.find({user:req.user._id},(err,edu)=>{
         if(err){
             return res.status(400).json({msg:'no details are found'});
         }
@@ -90,7 +126,7 @@ exports.getUserEducation = (req,res,next) =>{
 
 // get details of the user experience
 exports.getUserExperience = (req,res,next) =>{
-    AddExperience.findOne({user:req.user._id},(err,exp)=>{
+    AddExperience.find({user:req.user._id},(err,exp)=>{
         if(err){
             return res.status(400).json({msg:"no such details found"});
         }

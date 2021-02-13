@@ -39,18 +39,20 @@
             </tr>
           </thead>
           <tbody>
+            <% for (let i=0;i<Exp.length;i++) {%>
             <tr>
-              <td><%= Exp.company %></td>
-              <td class="hide-sm"><%= Exp.title %></td>
+              <td><%= Exp[i].company %></td>
+              <td class="hide-sm"><%= Exp[i].title %></td>
               <td class="hide-sm">
-                <%= Exp.from %> to <%= Exp.to %>
+                <%= Exp[i].from %> to <%= Exp[i].to %>
               </td>
               <td>
-                <button class="btn btn-danger">
+                <a href="/api/user/deleteExp/<%= Exp[i]._id %>" class="btn btn-danger">
                   Delete
-                </button>
+                </a>
               </td>
             </tr>
+            <% } %>
           </tbody>
         </table>
   
@@ -67,18 +69,20 @@
             </tr>
           </thead>
           <tbody>
+            <% for(let j=0;j<Edu.length;j++){ %>
             <tr>
-              <td><%= Edu.school %></td>
-              <td class="hide-sm"><%= Edu.degree %></td>
+              <td><%= Edu[j].school %></td>
+              <td class="hide-sm"><%= Edu[j].degree %></td>
               <td class="hide-sm">
-                <%= Edu.from %> to <%= Edu.to %>
+                <%= Edu[j].from %> to <%= Edu[j].to %>
               </td>
               <td>
-                <button class="btn btn-danger">
+                <a href="/api/user/delete/<%= Edu[j]._id %>" class=" btn btn-danger">
                   Delete
-                </button>
+                </a>
               </td>
             </tr>
+            <% } %>
           </tbody>
         </table>
   
@@ -91,6 +95,6 @@
           </a>
         </div>
       </section>
-
+      
 </body>
 </html>

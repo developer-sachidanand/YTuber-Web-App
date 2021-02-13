@@ -26,7 +26,6 @@ const userEducation = new schema({
     },
     current:{
         type:Boolean,
-        default:false
     },
     description:{
         type:String,

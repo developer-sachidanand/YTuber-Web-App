@@ -4,7 +4,8 @@ const router = express.Router();
 const { ensureAuthenticated, forwardAuthenticated } = require("../controllers/auth");
 const {signup,sendMessage} = require("../controllers/users");
 const {UserProfile,addExperience,addEducation
-,deleteEducation,deleteAccount,deleteExperience,getUserEducation, getUserExperience} = require("../controllers/userProfile");
+,deleteEducation,deleteAccount,deleteExperience,deleteExperienceView,getUserEducation,
+ getUserExperience,getdeleteEducation} = require("../controllers/userProfile");
 
 // for fetching the data into the front-end , some database imports here
 const UserExperience = require('../models/userExperience');
@@ -29,6 +30,7 @@ router.get("/user/logout", (req, res) => {
 
 // visiting the user profile
 router.get("/user/profile",ensureAuthenticated,getUserEducation,getUserExperience,(req,res)=>{
+
     res.render('profile',{user:req.user,Exp:req.experience,Edu:req.education})
     
 });
@@ -51,7 +53,8 @@ router.get("/user/add/experience",ensureAuthenticated,(req,res)=>{
 router.post("/user/add/experience",ensureAuthenticated,addExperience);
 
 // deleting the user experience information
-router.delete("/user/add/experience",ensureAuthenticated,deleteExperience);
+router.get("/user/deleteExp/:id",ensureAuthenticated,deleteExperienceView);
+router.post("/user/deleteExp/:id",ensureAuthenticated,deleteExperience);
 
 // editing the user profile education
 router.get("/user/add/education",ensureAuthenticated,(req,res)=>{
@@ -61,7 +64,8 @@ router.get("/user/add/education",ensureAuthenticated,(req,res)=>{
 router.post("/user/add/education",ensureAuthenticated,addEducation);
 
 // deleting the user education  details
-router.delete("/user/add/education",ensureAuthenticated,deleteEducation);
+router.get("/user/delete/:id",ensureAuthenticated,getdeleteEducation);
+router.post("/user/delete/:id",ensureAuthenticated,deleteEducation);
 
 // accessing the about page
 router.get("/about",(req,res)=>{

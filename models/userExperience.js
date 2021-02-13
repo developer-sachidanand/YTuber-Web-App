@@ -26,7 +26,6 @@ const userExperience = new schema({
     },
     current:{
         type:Boolean,
-        default:false
     },
     description:{
         type:String,
