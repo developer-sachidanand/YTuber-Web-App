@@ -6,10 +6,6 @@ const {signup,sendMessage} = require("../controllers/users");
 const {UserProfile,addExperience,addEducation
 ,deleteEducation,deleteAccount,deleteExperience,getUserEducation, getUserExperience} = require("../controllers/userProfile");
 
-// for fetching the data into the front-end , some database imports here
-const UserExperience = require('../models/userExperience');
-const UserEducation = require('../models/userEducation');
-// const UserProfile = require('../models/userProfile');;
 
 // getting the signup page
 router.get("/user/signup",forwardAuthenticated,(req,res)=>{
