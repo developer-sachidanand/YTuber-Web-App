@@ -18,6 +18,7 @@ require("./controllers/passport")(passport);
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine','ejs');
 
+// To get bootstrap and other static CSS files
 app.use(express.static(path.join(__dirname,'node_modules')));
 app.use(express.static(path.join(__dirname,'public')));
 
